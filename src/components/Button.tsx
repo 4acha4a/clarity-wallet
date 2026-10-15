@@ -1,4 +1,4 @@
-import type { ComponentPropsWithoutRef } from "react";
+import type { ComponentPropsWithRef, ComponentPropsWithoutRef } from "react";
 
 const variantStyles = {
     primary:
@@ -14,7 +14,7 @@ type SharedProps = {
     className?: string;
 };
 
-type ButtonProps = SharedProps & ComponentPropsWithoutRef<"button"> & {
+type ButtonProps = SharedProps & ComponentPropsWithRef<"button"> & {
     href?: never;
 };
 
