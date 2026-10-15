@@ -10,7 +10,7 @@ const hitoSans = hitoFont({
 });
 
 const hitoMono = hitoFont({
-  src: "../fonts/HitoSans-Regular.woff2",
+  src: "../fonts/HitoMono-Regular.woff2",
   variable: "--font-hito-mono",
   display: "swap",
 });
