@@ -23,7 +23,7 @@ type AnchorProps = SharedProps & ComponentPropsWithoutRef<"a"> & {
 };
 
 function getClassName(variant: keyof typeof variantStyles, className: string) {
-    return `inline-flex items-center justify-center rounded-lg text-center font-bold transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-zinc-900 disabled:cursor-not-allowed disabled:opacity-50 dark:focus-visible:outline-zinc-100 ${variantStyles[variant]} ${className}`;
+    return `inline-flex items-center justify-center rounded-lg text-center font-bold color-transition focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-zinc-900 disabled:cursor-not-allowed disabled:opacity-50 dark:focus-visible:outline-zinc-100 ${variantStyles[variant]} ${className}`;
 }
 
 export default function Button(props: ButtonProps | AnchorProps) {

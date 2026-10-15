@@ -75,7 +75,7 @@ function Token({ token, balancesVisible }: TokenProps) {
                             {token.name}
                         </span>
 
-                        <span className="text-text-muted transition-colors group-hover:text-text">
+                        <span className="text-text-muted color-transition group-hover:text-text">
                             <span>{token.symbol}</span>
                             <span> • </span>
                             <span className="truncate">{token.network.name}</span>

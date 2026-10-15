@@ -31,7 +31,7 @@ export default function ThemeToggle() {
             <svg
                 aria-hidden="true"
                 viewBox="0 0 24 24"
-                className="absolute size-5 rotate-0 scale-100 opacity-100 transition-all duration-300 dark:-rotate-90 dark:scale-0 dark:opacity-0"
+                className="theme-icon theme-icon-sun absolute size-5"
                 fill="none"
                 stroke="currentColor"
                 strokeWidth="1.8"
@@ -43,7 +43,7 @@ export default function ThemeToggle() {
             <svg
                 aria-hidden="true"
                 viewBox="0 0 24 24"
-                className="absolute size-5 rotate-90 scale-0 opacity-0 transition-all duration-300 dark:rotate-0 dark:scale-100 dark:opacity-100"
+                className="theme-icon theme-icon-moon absolute size-5"
                 fill="none"
                 stroke="currentColor"
                 strokeWidth="1.8"

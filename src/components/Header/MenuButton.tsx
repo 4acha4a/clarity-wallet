@@ -10,8 +10,6 @@ export default function MenuButton() {
     const menuButtonRef = useRef<HTMLButtonElement>(null);
     const menuPanelRef = useRef<HTMLElement>(null);
 
-    const buttonIconProperties = `absolute inset-0 flex items-center justify-center transition-all duration-200`;
-
     useEffect(() => {
         if (!buttonPressed) return;
 
@@ -46,7 +44,8 @@ export default function MenuButton() {
                 onClick={() => setButtonPressed((pressed) => !pressed)}
             >
                 <span
-                    className={`${buttonIconProperties} ${buttonPressed ? "rotate-90 scale-75 opacity-0" : "rotate-0 scale-100 opacity-100"}`}
+                    className="menu-icon menu-icon-open absolute inset-0 flex items-center justify-center"
+                    data-open={buttonPressed}
                 >
                     <svg
                         aria-hidden="true"
@@ -62,7 +61,8 @@ export default function MenuButton() {
                 </span>
 
                 <span
-                    className={`${buttonIconProperties} ${buttonPressed ? "rotate-0 scale-100 opacity-100" : "-rotate-90 scale-75 opacity-0"}`}
+                    className="menu-icon menu-icon-close absolute inset-0 flex items-center justify-center"
+                    data-open={buttonPressed}
                 >
                     <svg
                         aria-hidden="true"
@@ -83,7 +83,8 @@ export default function MenuButton() {
                 tabIndex={-1}
                 aria-label="Close menu"
                 aria-hidden={!buttonPressed}
-                className={`fixed inset-0 z-40 bg-black/50 transition-opacity duration-300 motion-reduce:transition-none ${buttonPressed ? "pointer-events-auto opacity-100" : "pointer-events-none opacity-0"}`}
+                className="menu-backdrop fixed inset-0 z-40 bg-black/50"
+                data-open={buttonPressed}
                 onClick={() => setButtonPressed(false)}
             />
 
@@ -95,7 +96,8 @@ export default function MenuButton() {
                 aria-labelledby="wallet-menu-title"
                 aria-hidden={!buttonPressed}
                 inert={!buttonPressed}
-                className={`fixed inset-x-0 bottom-0 z-50 mx-auto w-full max-w-md rounded-t-3xl border border-b-0 border-zinc-200 bg-white px-6 pb-[calc(1.5rem+env(safe-area-inset-bottom))] pt-3 shadow-2xl dark:border-zinc-800 dark:bg-zinc-950 transition-transform duration-300 ease-out motion-reduce:transition-none ${buttonPressed ? "translate-y-0" : "translate-y-full"}`}
+                className="menu-panel fixed inset-x-0 bottom-0 z-50 mx-auto w-full max-w-md rounded-t-3xl border border-b-0 border-zinc-200 bg-white px-6 pb-[calc(1.5rem+env(safe-area-inset-bottom))] pt-3 shadow-2xl dark:border-zinc-800 dark:bg-zinc-950"
+                data-open={buttonPressed}
             >
                 <div className="mx-auto mb-5 h-1 w-10 rounded-full bg-zinc-300 dark:bg-zinc-700" />
                 <h2 id="wallet-menu-title" className="mb-4 text-xl font-semibold">

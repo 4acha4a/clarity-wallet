@@ -17,7 +17,8 @@ export default function Tokens({tokenList, balancesVisible, tokenListVisible, se
                     {tokenListVisible ? "TOKENS" : "TOKENS"}
                     <span
                         aria-hidden="true"
-                        className={`ml-4 inline-block transition-transform ${tokenListVisible ? "rotate-90" : "rotate-0"}`}
+                        className="token-list-chevron ml-4 inline-block"
+                        data-open={tokenListVisible}
                     >
                         ›
                     </span>
@@ -31,11 +32,12 @@ export default function Tokens({tokenList, balancesVisible, tokenListVisible, se
 
             </div>
             <div
-                className={`grid transition-[grid-template-rows,opacity] duration-200 ease-out motion-reduce:transition-none ${tokenListVisible ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"}`}
+                className="token-list-collapse"
+                data-open={tokenListVisible}
                 inert={!tokenListVisible}
                 aria-hidden={!tokenListVisible}
             >
-                <div className="min-h-0 overflow-hidden">
+                <div>
                     <TokenList balancesVisible={balancesVisible}>
                         {tokenList}
                     </TokenList>
