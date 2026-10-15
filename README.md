@@ -1,36 +1,88 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Clarity
 
-## Getting Started
+**A clean, mobile-first cryptocurrency wallet interface built with Next.js, React, and TypeScript.**
 
-First, run the development server:
+Clarity is a personal software engineering project exploring how to build an intuitive crypto wallet experience, with an emphasis on clear information hierarchy, reusable components, and a maintainable frontend architecture.
+
+**Development status:** Early-stage UI prototype. The app currently displays mock balances and prices; it is not connected to any blockchain and cannot send or receive cryptocurrency.
+
+## Features
+
+The current prototype includes:
+
+- **Portfolio overview** — calculates the total USD value of the displayed holdings.
+- **Multi-chain asset list** — displays sample assets on Bitcoin, Ethereum, Zcash, and Solana, including network indicators.
+- **Token details at a glance** — shows simulated balances, USD values, and 24-hour price changes.
+- **Balance privacy toggle** — hides or reveals portfolio and token balances.
+- **Light and dark themes** — includes a manual theme toggle and saves the preference in local storage.
+- **Mobile-first layout** — a compact interface designed for narrow screens.
+
+The **Send** and **Receive** buttons are currently UI placeholders; no transaction flow is implemented.
+
+## Tech stack
+
+- **Next.js** — App Router and application structure
+- **React** — component-based UI and local state
+- **TypeScript** — typed asset and network models
+- **Tailwind CSS** — styling and responsive layouts
+- **@web3icons/react** — token and network icons
+
+## Getting started
+
+### Prerequisites
+
+- Node.js and npm
+
+### Run locally
 
 ```bash
+git clone <your-repository-url>
+cd clarity
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open http://localhost:3000 in your browser.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+These commands assume the full Next.js project, including its `package.json` and npm scripts, is present in the repository.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Project structure
 
-## Learn More
+```text
+src/
+├── app/
+│   ├── globals.css
+│   ├── layout.tsx
+│   └── page.tsx
+└── components/
+    ├── Account.tsx
+    ├── Balance.tsx
+    ├── Button.tsx
+    ├── Header.tsx
+    ├── SendReceive.tsx
+    ├── ThemeToggle.tsx
+    ├── TokenList.tsx
+    └── WalletDashboard.tsx
+```
 
-To learn more about Next.js, take a look at the following resources:
+## Roadmap
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+The following are **planned improvements**, not implemented features:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- [ ] Replace mock prices and balances with real data sources.
+- [ ] Add wallet onboarding and account management.
+- [ ] Implement blockchain connections and address validation.
+- [ ] Build actual send and receive flows.
+- [ ] Add backend services and persistent data storage where needed.
+- [ ] Introduce automated tests for UI logic and critical workflows.
+- [ ] Review security architecture before handling real funds.
 
-## Deploy on Vercel
+## Security notice
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+**Clarity is not production-ready and has not undergone a security audit.**
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+The current version is a frontend demonstration. Do not enter real private keys or seed phrases, and do not use this project to manage real cryptocurrency funds.
+
+## License
+
+No open-source license has been selected yet. Until one is added, the repository's source code remains subject to applicable copyright law.
