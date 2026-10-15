@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import hitoFont from "next/font/local";
+import Header from "@/components/Header/Header";
 
 const hitoSans = hitoFont({
   src: "../fonts/HitoSans-Regular.woff2",
@@ -20,12 +21,17 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
-  return (
+    return (
     <html
-      lang="en"
-      className={`${hitoSans.variable} h-full antialiased`}
+        lang="en"
+        className={`${hitoSans.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col mx-auto">{children}</body>
+        <body className="min-h-full flex flex-col mx-auto">
+            <Header />
+            <main className="flex min-h-screen flex-col">
+                {children}
+            </main>
+        </body>
     </html>
   );
 }

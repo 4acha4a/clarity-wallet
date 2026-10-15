@@ -18,13 +18,12 @@ export default function WalletDashboard({ tokens }: WalletDashboardProps) {
     );
     return (
         <>
-        <Header />
         <WalletOverview
             balancesVisible={balancesVisible}
             onToggleBalances={() => setBalancesVisible((visible) => !visible)}
             totalWalletValue={totalWalletValue}
         />
-        <Tokens balancesVisible={balancesVisible} tokenList={tokens}></Tokens>
+        <Tokens balancesVisible={balancesVisible} tokenList={tokens}/>
         </>
     );
 }
