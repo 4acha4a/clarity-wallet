@@ -4,7 +4,8 @@
 
 :root {
   --primary: #1c1f2a;
-  --on-primary: #2b2f3a;
+  --on-primary: #f7f2e8;
+  --primary-hover: #2b2f3a;
   --surface: #fffdf8;
   --surface-muted: #fbf8f1;
   --background: #f7f2e8;
@@ -19,9 +20,28 @@
   color-scheme: light;
 }
 
+:root[data-theme="dark"] {
+  --primary: #d3a35a;
+  --on-primary: #171a22;
+  --primary-hover: #e0b777;
+  --surface: #222630;
+  --surface-muted: #292d37;
+  --background: #171a22;
+  --background-raised: #303540;
+  --text: #f0ebe2;
+  --text-muted: #a8aaae;
+  --border: #44444a;
+  --accent: #d3a35a;
+  --verify: #6b9fff;
+  --success: #48b88b;
+  --error: #ef7068;
+  color-scheme: dark;
+}
+
 @theme inline {
   --color-primary: var(--primary);
   --color-on-primary: var(--on-primary);
+  --color-primary-hover: var(--primary-hover);
   --color-surface: var(--surface);
   --color-surface-muted: var(--surface-muted);
   --color-background: var(--background);
@@ -35,11 +55,6 @@
   --color-error: var(--error);
   --font-sans: var(--font-hito-sans);
   --font-mono: var(--font-hito-mono);
-}
-
-.dark {
-  --background: #0a0a0a;
-  --foreground: #ededed;
 }
 
 html,

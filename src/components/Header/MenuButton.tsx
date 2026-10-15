@@ -1,9 +1,7 @@
 "use client";
 
-import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import Button from "../Button";
-import ThemeToggle from "../ThemeToggle";
 
 export default function MenuButton() {
     const [buttonPressed, setButtonPressed] = useState(false);
@@ -96,10 +94,10 @@ export default function MenuButton() {
                 aria-labelledby="wallet-menu-title"
                 aria-hidden={!buttonPressed}
                 inert={!buttonPressed}
-                className="menu-panel fixed inset-x-0 bottom-0 z-50 mx-auto w-full max-w-md rounded-t-3xl border border-b-0 border-zinc-200 bg-white px-6 pb-[calc(1.5rem+env(safe-area-inset-bottom))] pt-3 shadow-2xl dark:border-zinc-800 dark:bg-zinc-950"
+                className="menu-panel fixed inset-x-0 bottom-0 z-50 mx-auto w-full max-w-md rounded-t-3xl border border-b-0 border-border bg-surface px-6 pb-[calc(1.5rem+env(safe-area-inset-bottom))] pt-3 shadow-2xl"
                 data-open={buttonPressed}
             >
-                <div className="mx-auto mb-5 h-1 w-10 rounded-full bg-zinc-300 dark:bg-zinc-700" />
+                <div className="mx-auto mb-5 h-1 w-10 rounded-full bg-border" />
                 <h2 id="wallet-menu-title" className="mb-4 text-xl font-semibold">
                     Menu
                 </h2>

@@ -5,6 +5,11 @@ import { useEffect } from "react";
 
 const themeStorageKey = "hito-theme";
 
+function applyTheme(isDarkTheme: boolean) {
+    document.documentElement.classList.toggle("dark", isDarkTheme);
+    document.documentElement.dataset.theme = isDarkTheme ? "dark" : "light";
+}
+
 export default function ThemeToggle() {
     useEffect(() => {
         const savedTheme = localStorage.getItem(themeStorageKey);
@@ -12,11 +17,12 @@ export default function ThemeToggle() {
         const shouldUseDarkTheme =
             savedTheme === "dark" || (savedTheme === null && prefersDark);
 
-        document.documentElement.classList.toggle("dark", shouldUseDarkTheme);
+        applyTheme(shouldUseDarkTheme);
     }, []);
 
     function toggleTheme() {
-        const isDarkTheme = document.documentElement.classList.toggle("dark");
+        const isDarkTheme = document.documentElement.dataset.theme !== "dark";
+        applyTheme(isDarkTheme);
         localStorage.setItem(themeStorageKey, isDarkTheme ? "dark" : "light");
     }
 

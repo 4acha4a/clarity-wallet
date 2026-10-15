@@ -54,14 +54,14 @@ function Token({ token, balancesVisible }: TokenProps) {
                                 size={44}
                                 variant="background"
                                 fallback={
-                                    <span className="flex size-11 items-center justify-center rounded-full bg-zinc-200 font-semibold dark:bg-zinc-800">
+                                    <span className="flex size-11 items-center justify-center rounded-full bg-background-raised font-semibold">
                                         {token.symbol.slice(0, 1)}
                                     </span>
                                 }
                             />
                         </span>
 
-                        <span className="absolute -bottom-1 -right-1 block overflow-hidden rounded-full bg-white p-0.5 dark:bg-zinc-950">
+                        <span className="absolute -bottom-1 -right-1 block overflow-hidden rounded-full bg-surface p-0.5">
                             <NetworkIcon
                                 name={token.network.id}
                                 size={18}
@@ -93,14 +93,14 @@ function Token({ token, balancesVisible }: TokenProps) {
                             : "••••••"}
                     </span>
 
-                    <span className="block text-sm text-zinc-500">
+                    <span className="block text-sm text-text-muted">
                         {balancesVisible
                             ? `${token.balance.toLocaleString("en-US")} ${token.symbol}`
                             : "••••••"}
                     </span>
 
                     <span
-                        className={`block text-sm ${isPositive ? "text-emerald-500" : "text-red-500"
+                        className={`block text-sm ${isPositive ? "text-success" : "text-error"
                             }`}
                     >
                         {isPositive ? "+" : ""}
