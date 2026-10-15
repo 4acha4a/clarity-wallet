@@ -20,6 +20,10 @@
   color-scheme: light;
 }
 
+* {
+  box-sizing: border-box;
+}
+
 :root[data-theme="dark"] {
   --primary: #d3a35a;
   --on-primary: #171a22;
