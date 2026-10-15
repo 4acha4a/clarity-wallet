@@ -10,7 +10,7 @@ interface WalletOverviewProps {
 
 export default function WalletOverview({balancesVisible, onToggleBalances, totalWalletValue}: WalletOverviewProps) {
     return (<main className="flex flex-1 flex-col items-start px-6">
-        <Account>1</Account>
+        <Account>Account 1</Account>
         <Balance
         visible={balancesVisible}
         onToggle={onToggleBalances}

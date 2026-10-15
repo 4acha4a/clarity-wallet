@@ -2,11 +2,11 @@ import type { ComponentPropsWithoutRef } from "react";
 
 const variantStyles = {
     primary:
-        "border border-zinc-950 bg-zinc-950 text-white hover:bg-zinc-800 dark:border-zinc-100 dark:bg-zinc-100 dark:text-zinc-950 dark:hover:bg-zinc-300",
+        "border border-primary bg-primary text-background hover:bg-on-primary dark:border-zinc-100 dark:bg-zinc-100 dark:text-zinc-950 dark:hover:bg-zinc-300",
     secondary:
-        "border border-zinc-950 bg-transparent text-zinc-950 hover:bg-zinc-100 dark:border-zinc-100 dark:text-zinc-100 dark:hover:bg-zinc-900",
+        "border border-border bg-background text-text hover:bg-surface-muted dark:border-zinc-100 dark:text-zinc-100 dark:hover:bg-zinc-900",
     transparent:
-        "bg-transparent text-zinc-950 hover:bg-zinc-100 dark:border-zinc-100 dark:text-zinc-100 dark:hover:bg-zinc-900",
+        "bg-transparent text-zinc-950 hover:bg-background-raised dark:border-zinc-100 dark:text-zinc-100 dark:hover:bg-zinc-900",
 } as const;
 
 type SharedProps = {

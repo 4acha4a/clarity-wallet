@@ -28,6 +28,7 @@ export interface WalletToken {
 interface TokenListProps {
     children: WalletToken[];
     balancesVisible: boolean;
+    className?: string;
 }
 
 interface TokenProps {
@@ -42,9 +43,9 @@ function Token({ token, balancesVisible }: TokenProps) {
         <Button
             key={token.id}
             variant="transparent"
-            className="w-full py-4 text-left"
+            className="group w-full py-4 px-4 text-left rounded-2xl"
         >
-            <span className="flex w-full items-center justify-between gap-4">
+            <span className="flex w-full items-center justify-between">
                 <span className="flex min-w-0 items-center gap-3">
                     <span className="relative shrink-0">
                         <span className="block size-11 overflow-hidden rounded-full">
@@ -74,9 +75,9 @@ function Token({ token, balancesVisible }: TokenProps) {
                             {token.name}
                         </span>
 
-                        <span className="flex items-center gap-1.5 text-sm text-zinc-500">
+                        <span className="text-text-muted transition-colors group-hover:text-text">
                             <span>{token.symbol}</span>
-                            <span>•</span>
+                            <span> • </span>
                             <span className="truncate">{token.network.name}</span>
                         </span>
                     </span>
@@ -111,9 +112,9 @@ function Token({ token, balancesVisible }: TokenProps) {
     );
 }
 
-export default function TokenList({ children, balancesVisible }: TokenListProps) {
+export default function TokenList({ children, balancesVisible, className }: TokenListProps) {
     return (
-        <div className="flex flex-col w-full border-t border-zinc-200 dark:border-zinc-800">
+        <span className={className}>
             {children.map((token) => {
                 return (
                     <Token
@@ -123,6 +124,6 @@ export default function TokenList({ children, balancesVisible }: TokenListProps)
                     />
                 );
             })}
-        </div>
+        </span>
     );
 }
