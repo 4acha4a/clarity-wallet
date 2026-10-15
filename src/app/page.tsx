@@ -106,5 +106,9 @@ const tokens: WalletToken[] = [
 ];
 
 export default function Dashboard() {
-    return <WalletDashboard tokens={tokens} />;
+    return (
+        <main className="flex min-h-screen flex-col">
+            <WalletDashboard tokens={tokens} />
+        </main>
+    );
 }

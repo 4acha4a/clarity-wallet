@@ -11,7 +11,7 @@ interface TokensProps {
 export default function Tokens({tokenList, balancesVisible, tokenListVisible, setTokenListVisible}: TokensProps) {
     return (
         <div className="w-full flex-1 bg-background py-8">
-            <div className="flex flex-col gap-4">
+            <div className="section-inner flex flex-col gap-4">
             <div className="flex items-center justify-between text-text font-bold text-xl">
                 <Button variant="transparent" className="p-3 font-mono" onClick={setTokenListVisible}>
                     {tokenListVisible ? "TOKENS" : "TOKENS"}

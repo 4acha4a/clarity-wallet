@@ -3,7 +3,7 @@ import MenuButton from "./MenuButton";
 export default function Header() {
     return (
         <header className="w-full border-b border-border bg-background-raised py-4">
-            <div className="flex items-center justify-between px-4 sm:px-6">
+            <div className="section-inner flex items-center justify-between">
 
                 <div className="flex h-12 items-center">
                     <span

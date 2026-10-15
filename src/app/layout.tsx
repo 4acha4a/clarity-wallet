@@ -25,7 +25,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       lang="en"
       className={`${hitoSans.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col mx-auto max-w-md">{children}</body>
+      <body className="min-h-full flex flex-col mx-auto">{children}</body>
     </html>
   );
 }

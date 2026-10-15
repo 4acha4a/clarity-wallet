@@ -43,7 +43,7 @@ function Token({ token, balancesVisible }: TokenProps) {
         <Button
             key={token.id}
             variant="transparent"
-            className="group w-full py-4 px-4 text-left rounded-2xl"
+            className="group w-full py-4 px-3 sm:px-4 text-left rounded-2xl"
         >
             <span className="flex w-full items-center justify-between">
                 <span className="flex min-w-0 items-center gap-3">

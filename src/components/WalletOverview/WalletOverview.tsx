@@ -9,7 +9,8 @@ interface WalletOverviewProps {
 }
 
 export default function WalletOverview({balancesVisible, onToggleBalances, totalWalletValue}: WalletOverviewProps) {
-    return (<main className="flex flex-1 flex-col items-start px-6">
+    return (<div className="flex-none py-4 border-b border-border">
+        <div className="section-inner flex flex-col px-4 items-start">
         <Account>Account 1</Account>
         <Balance
         visible={balancesVisible}
@@ -18,5 +19,6 @@ export default function WalletOverview({balancesVisible, onToggleBalances, total
         {totalWalletValue}
         </Balance>
         <SendReceive />
-    </main>);
+        </div>
+    </div>);
 }
