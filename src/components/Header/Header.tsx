@@ -4,7 +4,7 @@ import MenuButton from "./MenuButton";
 
 export default function Header() {
     return (
-        <header className="w-full border-b border-border bg-background-raised py-4">
+        <header className="w-full border-b border-border py-4">
             <div className="section-inner flex items-center justify-between">
 
                 <div className="flex h-12 items-center">
@@ -14,7 +14,7 @@ export default function Header() {
                     />
                 </div>
 
-                <div className="flex items-center">
+                <div className="flex items-center gap-4">
                     <ThemeToggle />
                     <MenuButton />
                 </div>

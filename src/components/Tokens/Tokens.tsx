@@ -11,8 +11,8 @@ interface TokensProps {
 export default function Tokens({tokenList, balancesVisible}: TokensProps) {
     const [activeTab, setActiveTab] = useState<Tab>("tokens");
     return (
-        <div className="w-full flex-1 bg-background py-8">
-            <div className="section-inner flex flex-col gap-4">
+        <div className="w-full flex-1 bg-surface py-8">
+            <div className="section-inner flex flex-col pl-4 gap-4">
             <div className="flex items-center justify-between text-text font-bold text-xl">
                 <WalletTabs activeTab={activeTab} onToggleTab={setActiveTab}/>
                 <Button variant="secondary" className="flex size-12 items-center justify-center" aria-label="Search tokens">

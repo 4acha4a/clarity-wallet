@@ -35,7 +35,7 @@ export default function MenuButton() {
                 variant="secondary"
                 ref={menuButtonRef}
                 type="button"
-                className="relative h-12 w-12 bg-background-raised hover:bg-background hover:text-text-muted"
+                className="relative h-12 w-12 hover:bg-background hover:text-text-muted"
                 aria-label={buttonPressed ? "Close menu" : "Open menu"}
                 aria-expanded={buttonPressed}
                 aria-controls="wallet-menu"
