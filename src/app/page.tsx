@@ -1,4 +1,4 @@
-import type { WalletToken } from "@/components/TokenList";
+import type { WalletToken } from "@/components/Tokens/TokenList";
 import WalletDashboard from "@/components/WalletDashboard";
 
 const tokens: WalletToken[] = [

@@ -4,7 +4,7 @@ import {
     NetworkIcon,
     TokenIcon,
 } from "@web3icons/react/dynamic";
-import Button from "./Button";
+import Button from "../Button";
 import { Fragment } from "react";
 
 export interface Network {
