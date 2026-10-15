@@ -1,28 +1,20 @@
+import { useState } from "react";
 import Button from "../Button";
 import TokenList, { WalletToken } from "./TokenList";
+import WalletTabs, { Tab } from "./WalletTabs";
 
 interface TokensProps {
     tokenList: WalletToken[];
     balancesVisible: boolean;
-    tokenListVisible: boolean;
-    setTokenListVisible: () => void;
 }
 
-export default function Tokens({tokenList, balancesVisible, tokenListVisible, setTokenListVisible}: TokensProps) {
+export default function Tokens({tokenList, balancesVisible}: TokensProps) {
+    const [activeTab, setActiveTab] = useState<Tab>("tokens");
     return (
         <div className="w-full flex-1 bg-background py-8">
             <div className="section-inner flex flex-col gap-4">
             <div className="flex items-center justify-between text-text font-bold text-xl">
-                <Button variant="transparent" className="p-3 font-mono" onClick={setTokenListVisible}>
-                    {tokenListVisible ? "TOKENS" : "TOKENS"}
-                    <span
-                        aria-hidden="true"
-                        className="token-list-chevron ml-4 inline-block"
-                        data-open={tokenListVisible}
-                    >
-                        ›
-                    </span>
-                </Button>
+                <WalletTabs activeTab={activeTab} onToggleTab={setActiveTab}/>
                 <Button variant="secondary" className="flex size-12 items-center justify-center" aria-label="Search tokens">
                     <span
                         aria-hidden="true"
@@ -33,9 +25,9 @@ export default function Tokens({tokenList, balancesVisible, tokenListVisible, se
             </div>
             <div
                 className="token-list-collapse"
-                data-open={tokenListVisible}
-                inert={!tokenListVisible}
-                aria-hidden={!tokenListVisible}
+                data-open={activeTab === "tokens"}
+                inert={!(activeTab === "tokens")}
+                aria-hidden={!(activeTab === "tokens")}
             >
                 <div>
                     <TokenList balancesVisible={balancesVisible}>

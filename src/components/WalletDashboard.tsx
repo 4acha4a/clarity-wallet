@@ -16,8 +16,6 @@ export default function WalletDashboard({ tokens }: WalletDashboardProps) {
         (total, token) => total + token.balance * token.priceUsd,
         0,
     );
-    const [tokenListVisible, setTokenListVisible] = useState(true);
-
     return (
         <>
         <Header />
@@ -26,7 +24,7 @@ export default function WalletDashboard({ tokens }: WalletDashboardProps) {
             onToggleBalances={() => setBalancesVisible((visible) => !visible)}
             totalWalletValue={totalWalletValue}
         />
-        <Tokens balancesVisible={balancesVisible} tokenList={tokens} tokenListVisible={tokenListVisible} setTokenListVisible={() => setTokenListVisible((visible) => !visible)}></Tokens>
+        <Tokens balancesVisible={balancesVisible} tokenList={tokens}></Tokens>
         </>
     );
 }
