@@ -1,5 +1,6 @@
 import ThemeToggle from "./ThemeToggle";
 import MenuButton from "./MenuButton";
+import Link from "next/link";
 
 
 export default function Header() {
@@ -8,10 +9,12 @@ export default function Header() {
             <div className="section-inner flex items-center justify-between">
 
                 <div className="flex h-12 items-center">
-                    <span
-                        aria-hidden="true"
-                        className="size-12 bg-current mask-[url('/hito-logo.svg')] mask-contain mask-no-repeat mask-center"
-                    />
+                    <Link href="/" aria-label="Hito home">
+                        <span
+                            aria-hidden="true"
+                            className="block size-12 bg-current mask-[url('/hito-logo.svg')] mask-contain mask-no-repeat mask-center"
+                        />
+                    </Link>
                 </div>
 
                 <div className="flex items-center gap-4">
